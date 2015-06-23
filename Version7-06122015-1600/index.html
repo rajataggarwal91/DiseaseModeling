@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.legend {
+              padding: 5px;
+              font: 10px sans-serif;
+              background: yellow;
+              box-shadow: 2px 2px 1px #888;
+            }
+
+</style>
+
+<script type="text/javascript">
+t1=performance.now();
+execTime=0;
+</script>
+
+<head>
+<label style="float:right; font-size:15px; margin-right:200px">Execution time</label><br><br>
+<label id="execTime" style="float:right; font-size:15px; margin-right:150px"></label>
+
+<script src="http://d3js.org/d3.v3.js"> </script>
+<script type="text/javascript" src="parallel.js" > </script>
+
+<script type="text/javascript" src="queue.js"></script>
+<script type="text/javascript" src="numeric-1.2.6.js"></script>
+<script type="text/javascript" src="readAndInitialize.js"></script>
+<script type="text/javascript" src="calculate.js"></script>
+<script type="text/javascript" src="lineChart.js"></script>
+<script type="text/javascript" src="legend.js"></script>
+</head>
+<body>
+<script>
+readCSV();
+
+//Calculates the complete time taken for plotting from start till end. Displays it on screen.
+function calc_execTime()
+{
+t2=performance.now();
+execTime =  (t2-t1)/1000;
+document.getElementById("execTime").innerHTML=execTime+" seconds";
+ }
+
+  </script>
+</body>
+</html>
