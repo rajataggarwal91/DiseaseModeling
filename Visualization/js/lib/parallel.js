@@ -67,8 +67,8 @@
 		return this;
 	};
 
-	var defaults = {
-		evalPath: isNode ? __dirname + '/eval.js' : null,
+	 defaults = {
+		evalPath: isNode ? __dirname + 'eval.js' : null,
 		maxWorkers: isNode ? require('os').cpus().length : 4,
 		synchronous: true
 	};

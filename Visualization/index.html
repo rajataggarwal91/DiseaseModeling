@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script type="text/javascript">
+t1=performance.now(); //marks the initial time for execution time calculation.
+execTime=0;
+</script>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="css/d3.slider.css">
+  <link rel="stylesheet" href="css/leaflet.css">
+  <link rel="stylesheet" href="css/sliders.css">
+  <link rel="stylesheet" href="css/maps.css">
+  <link rel="stylesheet" href="css/container.css">
+  <link rel="stylesheet" href="css/lineChart.css">
+
+  <script type="text/javascript" src="js/lib/d3.v3.js"> </script>
+  <script type="text/javascript" src="js/lib/parallel.js" > </script>
+  <script type="text/javascript" src="js/lib/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/lib/topojson.v1.min.js"></script>
+  <script type="text/javascript" src="js/lib/datamaps.world.min.js?v=1"></script>
+  <script type="text/javascript" src="js/lib/colorbrewer.js"></script>
+  <script type="text/javascript" src="js/lib/numeric-1.2.6.js"></script>
+  <script type="text/javascript" src="js/readAndInitialize.js"></script>
+  <script type="text/javascript" src="js/ODESolver.js"></script>
+  <script type="text/javascript" src="js/IhlineChart.js"></script>
+  <script type="text/javascript" src="js/ShlineChart.js"></script>
+  <script type="text/javascript" src="js/EhlineChart.js"></script>
+  <script type="text/javascript" src="js/RhlineChart.js"></script>
+  <script type="text/javascript" src="js/TempLineChart.js"></script>
+  <script type="text/javascript" src="js/PrepLineChart.js"></script>
+  <script type="text/javascript" src="js/legend.js"></script>
+  <script type="text/javascript" src="js/lib/d3.slider.js"></script>
+  <script type="text/javascript" src="js/sliders.js"></script>
+  <script type="text/javascript" src="js/calcExec.js"></script>
+  <script type="text/javascript" src="js/mapLegend.js"></script>
+  <script type="text/javascript" src="js/lib/leaflet.js"></script>
+  <script type="text/javascript" src="js/countries_geo.js"></script>
+  <script type="text/javascript" src="js/InfectedHumansMap.js"></script>
+  <script type="text/javascript" src="js/TempMap.js"></script>
+  <script type="text/javascript" src="js/PrepMap.js"></script>
+  
+  
+</head>
+
+
+<body>
+
+  <div id="loading"><img src="images/loading.gif"/></div>
+  
+  <div id="lcontainer">
+    <div id="IhMap" class="leaflet-container leaflet-fade-anim" tabindex="0" style="position: relative;">
+      <div class="leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
+        <div class="leaflet-tile-pane">
+          <div class="leaflet-layer">
+            <div class="leaflet-tile-container"></div>
+            <div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | Map data © <a href="http://openstreetmap.org/">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com/">Mapbox</a>, Infected Humans © </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div id ="rcontainer">
+    <!-- <div id="Vslider1"></div>  -->
+    <div id="TempLineChart"></div>
+    <div id="map" class="leaflet-container leaflet-fade-anim" tabindex="0" style="position: relative;">
+     <div class="leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
+      <div class="leaflet-tile-pane">
+       <div class="leaflet-layer">
+        <div class="leaflet-tile-container"></div>
+        <div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | Map data © <a href="http://openstreetmap.org/">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com/">Mapbox</a>, Temperature data </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div id="Vslider2"></div>  -->
+<div id="PrepLineChart"></div>
+<div id="PrepMap" class="leaflet-container leaflet-fade-anim" tabindex="0" style="position: relative;">
+ <div class="leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
+  <div class="leaflet-tile-pane">
+   <div class="leaflet-layer">
+    <div class="leaflet-tile-container"></div>
+    <div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | Map data © <a href="http://openstreetmap.org/">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com/">Mapbox</a>, Precipitation data </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+
+<div id="bContainer">
+  <div id="LineChart"></div>
+  <div id="LineChart2"></div>
+  <div id="LineChart3"></div>
+  <div id="LineChart4"></div>
+
+  <div id="SlidersDiv">
+    <div id="Tslider"></div>
+    <div id="Mslider"></div>
+  </div>
+
+  <div id="LegendDiv" ></div>
+</div>
+
+<script>
+ readCSV();
+</script>
+
+
+</body>
+</html>
+

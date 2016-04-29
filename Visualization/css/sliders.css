@@ -1,0 +1,64 @@
+ body {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+
+  .legend2 {
+    padding: 5px;
+    font: 10px sans-serif;
+    background: yellow;
+    box-shadow: 2px 2px 1px #888;
+    margin-left:10px;
+
+  }
+
+  #Vslider1 {
+    height:20vh   ;
+    float:right;
+    margin-right:2vw;
+	margin-top:1vw;
+     }
+
+  #Vslider2 {
+    height:20vh;
+    float:right;
+    margin-right:2vw;
+	margin-top:1vw;
+     }
+
+
+  #Tslider {
+    margin-left:50px;
+    float:left;
+    width:50vw;
+   /* position:absolute;*/
+    
+
+   }
+
+   #Mslider {
+    margin-top:20px;
+    margin-left:50px;
+    float:left;
+    width:50vw;
+   /* position:absolute;*/
+    
+
+   }
+
+ 
+
+ 

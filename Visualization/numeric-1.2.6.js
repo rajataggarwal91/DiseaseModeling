@@ -2883,6 +2883,7 @@ numeric.Dopri.prototype.at = function at(x) {
 }
 
 numeric.dopri = function dopri(x0,x1,y0,f,tol,maxit,event) {
+    
     if(typeof tol === "undefined") { tol = 1e-6; }
     if(typeof maxit === "undefined") { maxit = 1000; }
     var xs = [x0], ys = [y0], k1 = [f(x0,y0)], k2,k3,k4,k5,k6,k7, ymid = [];
@@ -2910,7 +2911,8 @@ numeric.dopri = function dopri(x0,x1,y0,f,tol,maxit,event) {
     var e0, e1, ev;
     var ret = new numeric.Dopri(xs,ys,k1,ymid,-1,"");
     if(typeof event === "function") e0 = event(x0,y0);
-    while(x0<x1 && it<maxit) {
+   //Rajat : made changed here, removed && it<maxit
+    while(x0<x1) {
         ++it;
         if(x0+h>x1) h = x1-x0;
         k2 = f(x0+c[0]*h,                add(y0,mul(   A2*h,k1[i])));
@@ -2926,6 +2928,7 @@ numeric.dopri = function dopri(x0,x1,y0,f,tol,maxit,event) {
         if(erinf > tol) { // reject
             h = 0.2*h*pow(tol/erinf,0.25);
             if(x0+h === x0) {
+                
                 ret.msg = "Step size became too small";
                 break;
             }
@@ -2995,7 +2998,7 @@ numeric.dopri = function dopri(x0,x1,y0,f,tol,maxit,event) {
         h = min(0.8*h*pow(tol/erinf,0.25),4*h);
     }
     ret.iterations = it;
-    return ret;
+            return ret;
 }
 
 // 11. Ax = b

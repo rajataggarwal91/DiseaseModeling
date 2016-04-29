@@ -1,0 +1,27 @@
+ #lcontainer{
+    
+    float:left;
+    margin-left: :3vw;
+    width:40vw;
+  }
+
+  #rcontainer{
+    width:55vw;
+    margin-left: :3vw;
+    float:right;
+  }
+
+    #bContainer{
+    width:100vw;
+    
+    
+  }
+
+ 
+  #loading{
+    position:fixed;
+    left: 45%;
+    top: 45%;
+    z-index: 3;
+
+  }
